@@ -4,3 +4,5 @@
     @endforeach
     <br>
 @endforeach
+
+<a href="{{ route('offer.add') }}">追加</a>
