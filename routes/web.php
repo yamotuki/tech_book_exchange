@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Offer')->group(function() {
+    Route::get('/add', 'AddController@showAddForm')->name('offer.add');
+    Route::post('/add', 'AddController@add');
 });
