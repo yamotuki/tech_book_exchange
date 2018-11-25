@@ -10,12 +10,21 @@ namespace App\Http\Controllers\Offer;
 
 
 use App\Http\Controllers\Controller;
+use App\Services\Offer\OfferScenarioService;
 
 class IndexController extends Controller
 {
+    private $scenarioService;
+
+    public function __construct(OfferScenarioService $scenarioService)
+    {
+        $this->scenarioService = $scenarioService;
+    }
+
     public function getList()
     {
-        // TODO offer list の取得と表示をかく
-        return view('offer_list');
+        return view('offer.index', [
+            'offerList' => $this->scenarioService->getOfferList()
+        ]);
     }
 }

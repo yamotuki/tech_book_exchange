@@ -12,6 +12,8 @@
 */
 
 Route::namespace('Offer')->group(function() {
+    Route::get('/', 'IndexController@getList')->name('offer.list');
+
     Route::get('/add', 'AddController@showAddForm')->name('offer.add');
     Route::post('/add', 'AddController@add');
 });

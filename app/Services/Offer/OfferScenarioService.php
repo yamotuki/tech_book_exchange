@@ -23,4 +23,21 @@ class OfferScenarioService
 
         $model->save();
     }
+
+    public function getOfferList()
+    {
+        $model = OfferEloquentModel::get();
+
+        $offers = [];
+        foreach ($model as $data) {
+            $offers[] = [
+                $data->out,
+                $data->want,
+                $data->area
+            ];
+
+        }
+
+        return $offers;
+    }
 }
