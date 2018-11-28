@@ -5,8 +5,12 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "service/top";
+
+html{
+  font-size:100%;
+  /* 16px */
+}
 
 .navbar-laravel {
   background-color: #fff;
