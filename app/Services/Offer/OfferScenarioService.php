@@ -10,6 +10,10 @@ namespace App\Services\Offer;
 
 
 //TODO あとで複雑になってくればQueryServiceとCommandService経由でModel叩くようにする。今はElooquentをここで直接叩いてしまう
+use Domain\OutOffer\OutOffer;
+use Domain\OutOffer\OutOfferArea;
+use Domain\OutOffer\OutOfferComment;
+use Domain\OutOffer\OutOfferImagePath;
 use Infra\OfferEloquentModel;
 
 class OfferScenarioService
@@ -17,8 +21,8 @@ class OfferScenarioService
     public function addOffer(array $data)
     {
         $model = new OfferEloquentModel();
-        $model->out = $data['out'];
-        $model->want = $data['want'];
+        $model->image_path = $data['image_path'];
+        $model->comment = $data['comment'];
         $model->area = $data['area'];
 
         $model->save();
@@ -30,11 +34,11 @@ class OfferScenarioService
 
         $offers = [];
         foreach ($model as $data) {
-            $offers[] = [
-                $data->out,
-                $data->want,
-                $data->area
-            ];
+            $offers[] = new OutOffer(
+                new OutOfferImagePath($data->image_path),
+                new OutOfferComment($data->comment),
+                new OutOfferArea($data->area)
+            );
 
         }
 

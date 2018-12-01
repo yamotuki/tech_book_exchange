@@ -15,14 +15,13 @@
 <section class="out-section">
     <h1 class="out-title">出品一覧</h1>
     <div class="out-items">
+        <?php /** @var \App\Domain\OutOffer\OutOffer $offer */ ?>
         @foreach($offerList as $offer)
             <div class="out-item">
+                {{-- TODO 投稿したImagePathから画像表示--}}
                 <img src="https://images-fe.ssl-images-amazon.com/images/I/81l9I4SLMtL._AC_SY200_.jpg" alt="画像">
-                @foreach($offer as $content)
-                    <div class="description">
-                        {{ $content }}
-                    </div>
-                @endforeach
+                yamotuki: {{ $offer->getComment() }} <br>
+                {{ $offer->getArea() }}
                 <div class="btn btn-primary">応募する</div>
             </div>
         @endforeach
