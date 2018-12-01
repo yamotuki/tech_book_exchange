@@ -17,9 +17,13 @@
     <div class="out-items">
         @foreach($offerList as $offer)
             <div class="out-item">
+                <img src="https://images-fe.ssl-images-amazon.com/images/I/81l9I4SLMtL._AC_SY200_.jpg" alt="画像">
                 @foreach($offer as $content)
-                    {{ $content }}
+                    <div class="description">
+                        {{ $content }}
+                    </div>
                 @endforeach
+                <div class="btn btn-primary">応募する</div>
             </div>
         @endforeach
     </div>
@@ -28,6 +32,11 @@
     </div>
 </section>
 
+{{-- TODO　交換は必須ではなくて、一つもらったら何か一つ出品することを推奨。技術書バトンのイメージ。--}}
+{{-- TODO　パネル情報は、以下のもの
+* 技術書タイトルと表紙（Amazonから引っ張ってくるか同人などなら画像アップロード）
+* 出品者名： 本に対する一言コメント（100文字以内くらい）
+* 応募ボタン --}}
 
 
 </body>
