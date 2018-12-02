@@ -1,15 +1,23 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 @import "service/top";
 
-html{
-  font-size:100%;
-  /* 16px */
+html {
+  font-size: 22px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
 }
 
 .navbar-laravel {

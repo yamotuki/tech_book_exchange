@@ -1,6 +1,8 @@
 <html>
 <header>
+    {{-- TODO ここはページを増やす時には共通化する--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </header>
 
 <body>
@@ -27,14 +29,20 @@
                     <div class="out-item-user">
                         by <a href="">yamotuki</a>
                     </div>
-                    場所：{{ $offer->getArea() }}</div>
-                <div class="btn btn-primary out-item-btn">応募する</div>
+                    <div>
+                        場所：{{ $offer->getArea() }}
+                    </div>
+                </div>
+                {{-- TODO ボタンの一番下の高さが画像の一番下の高さに合うようにしたい--}}
+                <div class="btn btn-primary out-item-btn">
+                    応募する
+                </div>
             </div>
         @endforeach
     </div>
 
     <div>
-        <a href="{{ route('offer.add') }}">追加</a>
+        <a class="btn btn-danger" href="{{ route('offer.add') }}">追加</a>
     </div>
 </section>
 

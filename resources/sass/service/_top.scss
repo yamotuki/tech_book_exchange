@@ -4,11 +4,11 @@
   text-align: center;
 
   .eye-catch-title {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .eye-catch-desc {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -26,13 +26,13 @@
     flex-flow: row wrap;
 
     .out-item {
-      padding: 40px 40px 0 0 ;
+      margin: 20px;
       width: calc(100% / 2 - 40px);
 
       img {
         // MEMO FlexBoxの中でのFloat
         float: left;
-        width: 150px;
+        witdh: 150px;
       }
 
       .out-item-desc {
@@ -43,6 +43,8 @@
       }
 
       .out-item-btn {
+        float: right;
+        margin-right: 10px;
       }
     }
   }

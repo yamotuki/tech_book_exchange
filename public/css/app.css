@@ -5,11 +5,11 @@
 }
 
 .eye-catch-section .eye-catch-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .eye-catch-section .eye-catch-desc {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .out-section {
@@ -32,13 +32,13 @@
 }
 
 .out-section .out-item-container .out-item {
-  padding: 40px 40px 0 0;
+  margin: 20px;
   width: calc(100% / 2 - 40px);
 }
 
 .out-section .out-item-container .out-item img {
   float: left;
-  width: 150px;
+  witdh: 150px;
 }
 
 .out-section .out-item-container .out-item .out-item-desc {
@@ -48,9 +48,25 @@
   width: calc(100% - (150px + 10px));
 }
 
+.out-section .out-item-container .out-item .out-item-btn {
+  float: right;
+  margin-right: 10px;
+}
+
 html {
-  font-size: 100%;
-  /* 16px */
+  font-size: 22px;
+}
+
+html h1 {
+  font-size: 3rem;
+}
+
+html h2 {
+  font-size: 2.5rem;
+}
+
+html h3 {
+  font-size: 2rem;
 }
 
 .navbar-laravel {
