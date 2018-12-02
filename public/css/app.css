@@ -13,7 +13,7 @@
 }
 
 .out-section {
-  width: 100%;
+  width: calc(100% - 100px);
   margin: 0 auto;
 }
 
@@ -25,11 +25,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .out-section .out-item-container .out-item {
-  padding: 20px;
-  width: calc(100% / 3);
+  padding: 40px 40px 0 0;
+  width: calc(100% / 2 - 40px);
 }
 
 .out-section .out-item-container .out-item img {

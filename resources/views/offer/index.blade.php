@@ -21,8 +21,12 @@
                 {{-- TODO 画像URLではなくて実体の投稿もしくはAmazonリンクを投稿できるようにする--}}
                 <img src="{{ $offer->getImagePath() }}" alt="画像">
                 <div class="out-item-desc">
-                    投稿者：yamotuki <br>
-                    コメント：{{ $offer->getComment() }} <br>
+                    <div class="out-item-comment">
+                        コメント：{{ $offer->getComment() }}
+                    </div>
+                    <div class="out-item-user">
+                        by <a href="">yamotuki</a>
+                    </div>
                     場所：{{ $offer->getArea() }}</div>
                 <div class="btn btn-primary out-item-btn">応募する</div>
             </div>

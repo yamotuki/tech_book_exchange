@@ -13,7 +13,7 @@
 }
 
 .out-section {
-  width: 100%;
+  width: calc(100% - 100px);
   margin: 0 auto;
 
 
@@ -23,10 +23,11 @@
 
   .out-item-container {
     display: flex;
+    flex-flow: row wrap;
 
     .out-item {
-      padding: 20px;
-      width: calc(100% / 3);
+      padding: 40px 40px 0 0 ;
+      width: calc(100% / 2 - 40px);
 
       img {
         // MEMO FlexBoxの中でのFloat
