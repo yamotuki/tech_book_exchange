@@ -14,19 +14,21 @@
 
 <section class="out-section">
     <h1 class="out-title">出品一覧</h1>
-    <div class="out-items">
+    <div class="out-item-container">
         <?php /** @var \App\Domain\OutOffer\OutOffer $offer */ ?>
         @foreach($offerList as $offer)
             <div class="out-item">
                 {{-- TODO 画像URLではなくて実体の投稿もしくはAmazonリンクを投稿できるようにする--}}
                 <img src="{{ $offer->getImagePath() }}" alt="画像">
-                投稿者：yamotuki <br>
-                コメント：{{ $offer->getComment() }} <br>
-                場所：{{ $offer->getArea() }}
-                <div class="btn btn-primary">応募する</div>
+                <div class="out-item-desc">
+                    投稿者：yamotuki <br>
+                    コメント：{{ $offer->getComment() }} <br>
+                    場所：{{ $offer->getArea() }}</div>
+                <div class="btn btn-primary out-item-btn">応募する</div>
             </div>
         @endforeach
     </div>
+
     <div>
         <a href="{{ route('offer.add') }}">追加</a>
     </div>

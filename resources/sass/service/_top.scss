@@ -13,14 +13,36 @@
 }
 
 .out-section {
-  width: 700px;
+  width: 100%;
   margin: 0 auto;
+
 
   .out-title {
     text-align: center;
   }
 
-  .out-item {
-    padding: 20px;
+  .out-item-container {
+    display: flex;
+
+    .out-item {
+      padding: 20px;
+      width: calc(100% / 3);
+
+      img {
+        // MEMO FlexBoxの中でのFloat
+        float: left;
+        width: 150px;
+      }
+
+      .out-item-desc {
+        float: left;
+        height: 200px;
+        margin-left: 10px;
+        width: calc(100% - (150px + 10px));
+      }
+
+      .out-item-btn {
+      }
+    }
   }
 }
