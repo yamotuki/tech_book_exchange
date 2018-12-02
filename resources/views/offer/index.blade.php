@@ -18,10 +18,11 @@
         <?php /** @var \App\Domain\OutOffer\OutOffer $offer */ ?>
         @foreach($offerList as $offer)
             <div class="out-item">
-                {{-- TODO 投稿したImagePathから画像表示--}}
-                <img src="https://images-fe.ssl-images-amazon.com/images/I/81l9I4SLMtL._AC_SY200_.jpg" alt="画像">
-                yamotuki: {{ $offer->getComment() }} <br>
-                {{ $offer->getArea() }}
+                {{-- TODO 画像URLではなくて実体の投稿もしくはAmazonリンクを投稿できるようにする--}}
+                <img src="{{ $offer->getImagePath() }}" alt="画像">
+                投稿者：yamotuki <br>
+                コメント：{{ $offer->getComment() }} <br>
+                場所：{{ $offer->getArea() }}
                 <div class="btn btn-primary">応募する</div>
             </div>
         @endforeach
