@@ -17,3 +17,19 @@ Route::namespace('Offer')->group(function() {
     Route::get('/add', 'AddController@showAddForm')->name('offer.add');
     Route::post('/add', 'AddController@add');
 });
+
+
+/*Route::get('/', array('as' => 'login', 'uses' => function(){
+    return view('welcome');
+}));*/
+Route::get('/auth/twitter', 'Auth\SocialAuthController@redirectToProvider')
+    ->name('auth.twitter');
+Route::get('/auth/twitter/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('/auth/twitter/logout', 'Auth\SocialAuthController@logout')
+    ->name('auth.twitter.logout');
+/*Route::get('home', array('as' => 'home', 'uses' => function(){
+    if(!Auth::check()){
+        return redirect()->route("login");
+    }
+    return view('home');
+}));*/

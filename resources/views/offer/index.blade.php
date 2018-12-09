@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <html>
 <header>
     {{-- TODO ここはページを増やす時には共通化する--}}
@@ -6,6 +10,19 @@
 </header>
 
 <body>
+
+<div class="login-container">
+    <div class="login-content">
+        <a class="btn btn-info" href="{{ route('auth.twitter') }}" role="button">Twitterログイン！！！！！</a>
+        <h1>ID {{ \Illuminate\Support\Facades\Auth::user()->name }} </h1>
+        <h1>表示名 {{ \Illuminate\Support\Facades\Auth::user()->show_name }} </h1>
+        <img src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" height="200" width="200"/>
+    </div>
+    <div>
+        <a href="{{ route('auth.twitter.logout') }}" role="button">Logout</a>
+    </div>
+</div>
+
 <section class="eye-catch-section">
     <h1 class="eye-catch-title">技術書バトン</h1>
     <div class="eye-catch-desc">
@@ -45,7 +62,7 @@
     </div>
     <a class="btn btn-danger" href="{{ route('offer.add') }}">追加する</a>
     <div>
-     </div>
+    </div>
 </section>
 
 {{-- TODO　交換は必須ではなくて、一つもらったら何か一つ出品することを推奨。技術書バトンのイメージ。--}}

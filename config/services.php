@@ -40,4 +40,13 @@ return [
         ],
     ],
 
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        // MEMO ドキュメントに
+        // 「redirectオプションが相対パスである場合、自動的に完全なURLへ解決されます。」
+        // とのことなので、パスの部分だけ指定するでも良いかも？
+        'redirect' => env('CALLBACK_URL')
+    ],
+
 ];
