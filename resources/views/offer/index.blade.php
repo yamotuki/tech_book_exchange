@@ -7,15 +7,18 @@
 
 <body>
 <section class="eye-catch-section">
-    <h1 class="eye-catch-title">技術書を交換して知識を交換しよう</h1>
+    <h1 class="eye-catch-title">技術書バトン</h1>
     <div class="eye-catch-desc">
         読み終わった技術書、沢山ありますよね <br>
-        交換を通して学習仲間を増やしましょう
+        これから学ぶ人に渡して、技術のバトンを繋げましょう
     </div>
 </section>
 
 <section class="out-section">
-    <h1 class="out-title">出品一覧</h1>
+    <h1 class="out-title">
+        出品一覧
+        <a class="btn btn-default" href="{{ route('offer.add') }}">追加する</a>
+    </h1>
     <div class="out-item-container">
         <?php /** @var \App\Domain\OutOffer\OutOffer $offer */ ?>
         @foreach($offerList as $offer)
@@ -40,17 +43,18 @@
             </div>
         @endforeach
     </div>
-
+    <a class="btn btn-danger" href="{{ route('offer.add') }}">追加する</a>
     <div>
-        <a class="btn btn-danger" href="{{ route('offer.add') }}">追加</a>
-    </div>
+     </div>
 </section>
 
 {{-- TODO　交換は必須ではなくて、一つもらったら何か一つ出品することを推奨。技術書バトンのイメージ。--}}
 {{-- TODO　パネル情報は、以下のもの
 * 技術書タイトルと表紙（Amazonから引っ張ってくるか同人などなら画像アップロード）
 * 出品者名： 本に対する一言コメント（100文字以内くらい）
-* 応募ボタン --}}
+* 応募ボタン
+
+TODO メッセージ機能などは初期はとりあえずTwitterのタイムラインやDMに任せてしまうと良い--}}
 
 
 </body>
