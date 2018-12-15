@@ -13,13 +13,18 @@
 
 <div class="login-container">
     <div class="login-content">
-        <a class="btn btn-info" href="{{ route('auth.twitter') }}" role="button">Twitterログイン！！！！！</a>
-        <h1>ID {{ \Illuminate\Support\Facades\Auth::user()->name }} </h1>
-        <h1>表示名 {{ \Illuminate\Support\Facades\Auth::user()->show_name }} </h1>
-        <img src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" height="200" width="200"/>
-    </div>
-    <div>
-        <a href="{{ route('auth.twitter.logout') }}" role="button">Logout</a>
+
+        @if(\Illuminate\Support\Facades\Auth::check())
+            <h1>ID {{ \Illuminate\Support\Facades\Auth::user()->name }} </h1>
+            <h1>表示名 {{ \Illuminate\Support\Facades\Auth::user()->show_name }} </h1>
+            <img src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" height="200" width="200"/>
+            <div>
+                <a href="{{ route('auth.twitter.logout') }}" role="button">Logout</a>
+            </div>
+        @else
+            <a class="btn btn-info" href="{{ route('auth.twitter') }}" role="button">Twitterログイン！！！！！</a>
+        @endif
+
     </div>
 </div>
 
