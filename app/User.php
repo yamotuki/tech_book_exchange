@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = 'twitter_id';
+
     /**
      * The attributes that are mass assignable.
      *

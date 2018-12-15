@@ -3,30 +3,33 @@
 ?>
 
 <html>
-<header>
+<head>
     {{-- TODO ここはページを増やす時には共通化する--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-</header>
+</head>
 
 <body>
 
-<div class="login-container">
-    <div class="login-content">
-
+<header>
+    <div class="login-container">
         @if(\Illuminate\Support\Facades\Auth::check())
-            <h1>ID {{ \Illuminate\Support\Facades\Auth::user()->name }} </h1>
-            <h1>表示名 {{ \Illuminate\Support\Facades\Auth::user()->show_name }} </h1>
-            <img src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" height="200" width="200"/>
-            <div>
-                <a href="{{ route('auth.twitter.logout') }}" role="button">Logout</a>
+            <div class="logged-in-user">
+                <img class="logged-in-icon" src="{{ \Illuminate\Support\Facades\Auth::user()->icon_url }}" height="200" width="200"/>
+                <div class="logged-in-name">
+                    {{ \Illuminate\Support\Facades\Auth::user()->name }}
+                    <div>
+                        <a href="{{ route('auth.twitter.logout') }}" role="button">Logout</a>
+                    </div>
+                </div>
             </div>
-        @else
-            <a class="btn btn-info" href="{{ route('auth.twitter') }}" role="button">Twitterログイン！！！！！</a>
-        @endif
 
+        @else
+            <a class="btn btn-info" href="{{ route('auth.twitter') }}" role="button">Twitterログイン</a>
+        @endif
     </div>
-</div>
+</header>
+
 
 <section class="eye-catch-section">
     <h1 class="eye-catch-title">技術書バトン</h1>

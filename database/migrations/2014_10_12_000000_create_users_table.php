@@ -14,13 +14,12 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('twitter_id');
             $table->string('name');
-            $table->string('show_name');
-            $table->string("twitter_id");
-            $table->string("avatar");
+            $table->string("icon_url");
             $table->rememberToken();
             $table->timestamps();
+            $table->unique('twitter_id');
         });
     }
 

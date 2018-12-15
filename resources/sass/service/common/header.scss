@@ -1,0 +1,21 @@
+.login-container {
+  float: right;
+  margin: 20px 20px 0 0;
+
+  .logged-in-user {
+    .logged-in-icon {
+      float: left;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
+    
+    .logged-in-name {
+      float: left;
+      padding-left: 10px;
+    }
+
+
+  }
+
+}

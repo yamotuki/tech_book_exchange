@@ -38,16 +38,17 @@ class SocialAuthController extends Controller
 
     private function findOrCreateUser($twitterUser)
     {
+        // TODO has(), get() をレポジトリに生やして、それを使って判定するのが綺麗そう
         $authUser = User::where('twitter_id', $twitterUser->id)->first();
 
         if ($authUser) {
             return $authUser;
         } else {
             $userModel = new User();
-            $userModel->name = $twitterUser->name;
-            $userModel->show_name = $twitterUser->nickname;
+            // FYI twitter->name は 変更可能な表示名、nicknameはIDとして認識される変更不可の文字列、IDは数値表現
             $userModel->twitter_id = $twitterUser->id;
-            $userModel->avatar = $twitterUser->avatar_original;
+            $userModel->name = $twitterUser->nickname;
+            $userModel->icon_url = $twitterUser->avatar_original;
             $userModel->save();
 
             // 上と重複コードになるので直した方が良い気がするが、とりあえずこれで動く気がする
