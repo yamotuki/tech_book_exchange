@@ -3,14 +3,15 @@
  * Created by PhpStorm.
  * User: tomoya_suzuki
  * Date: 2018-12-01
- * Time: 22:30
+ * Time: 22:28
  */
 
-namespace Domain\OutOffer;
+namespace Domain\Baton;
 
 
 use Domain\Base\BaseStringValue;
 
-class OutOfferArea extends BaseStringValue
+class BatonComment extends BaseStringValue
 {
+
 }

@@ -6,12 +6,12 @@
  * Time: 22:28
  */
 
-namespace Domain\OutOffer;
+namespace Domain\Baton;
 
 
 use Domain\Base\BaseStringValue;
 
-class OutOfferImagePath extends BaseStringValue
+class BatonImagePath extends BaseStringValue
 {
 
 }

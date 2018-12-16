@@ -11,10 +11,10 @@
 |
 */
 
-Route::namespace('Offer')->group(function() {
-    Route::get('/', 'IndexController@getList')->name('offer.list');
+Route::namespace('Baton')->group(function() {
+    Route::get('/', 'IndexController@getList')->name('baton.list');
 
-    Route::get('/add', 'AddController@showAddForm')->name('offer.add');
+    Route::get('/add', 'AddController@showAddForm')->name('baton.add');
     Route::post('/add', 'AddController@add');
 });
 

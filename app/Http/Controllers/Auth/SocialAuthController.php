@@ -33,7 +33,7 @@ class SocialAuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect()->route('offer.list');
+        return redirect()->route('baton.list');
     }
 
     private function findOrCreateUser($twitterUser)
@@ -59,7 +59,7 @@ class SocialAuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('offer.list');
+        return redirect()->route('baton.list');
     }
 
     public function __construct()

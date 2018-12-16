@@ -42,23 +42,23 @@
 <section class="out-section">
     <h1 class="out-title">
         出品一覧
-        <a class="btn btn-default" href="{{ route('offer.add') }}">追加する</a>
+        <a class="btn btn-default" href="{{ route('baton.add') }}">追加する</a>
     </h1>
     <div class="out-item-container">
-        <?php /** @var \App\Domain\OutOffer\OutOffer $offer */ ?>
-        @foreach($offerList as $offer)
+        <?php /** @var \App\DataTransferObject\BatonDetail $batonDetail */ ?>
+        @foreach($batonDetails as $batonDetail)
             <div class="out-item">
                 {{-- TODO 画像URLではなくて実体の投稿もしくはAmazonリンクを投稿できるようにする--}}
-                <img src="{{ $offer->getImagePath() }}" alt="画像">
+                <img src="{{ $batonDetail->getEntity()->getImagePath() }}" alt="画像">
                 <div class="out-item-desc">
                     <div class="out-item-comment">
-                        コメント：{{ $offer->getComment() }}
+                        コメント：{{ $batonDetail->getEntity()->getComment() }}
                     </div>
                     <div class="out-item-user">
-                        by <a href="">yamotuki</a>
+                        by <a href="https://twitter.com/{{$batonDetail->getTwitterName()}}">{{ $batonDetail->getTwitterName() }}</a>
                     </div>
                     <div>
-                        場所：{{ $offer->getArea() }}
+                        場所：{{ $batonDetail->getEntity()->getArea() }}
                     </div>
                 </div>
                 {{-- TODO ボタンの一番下の高さが画像の一番下の高さに合うようにしたい--}}
@@ -68,7 +68,7 @@
             </div>
         @endforeach
     </div>
-    <a class="btn btn-danger" href="{{ route('offer.add') }}">追加する</a>
+    <a class="btn btn-danger" href="{{ route('baton.add') }}">追加する</a>
     <div>
     </div>
 </section>

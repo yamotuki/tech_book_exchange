@@ -7,7 +7,7 @@
  */
 ?>
 
-<form action="{{ route('offer.add') }}" method="POST">
+<form action="{{ route('baton.add') }}" method="POST">
     {{ csrf_field() }}
     <div>
         <label for="out">出品する本の画像URL</label>

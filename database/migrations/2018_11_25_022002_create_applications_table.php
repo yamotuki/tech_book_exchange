@@ -14,13 +14,13 @@ class CreateApplicationsTable extends Migration
     public function up()
     {
         Schema::create('applications', function (Blueprint $table) {
-            $table->integer('offer_id')->unsigned();
+            $table->integer('baton_id')->unsigned();
             $table->string('out');
             $table->string('comment');
             $table->timestamps();
             $table
-                ->foreign('offer_id')
-                ->references('id')->on('offers');
+                ->foreign('baton_id')
+                ->references('id')->on('batons');
         });
     }
 

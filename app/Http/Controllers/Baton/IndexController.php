@@ -6,25 +6,25 @@
  * Time: 18:15
  */
 
-namespace App\Http\Controllers\Offer;
+namespace App\Http\Controllers\Baton;
 
 
 use App\Http\Controllers\Controller;
-use App\Services\Offer\OfferScenarioService;
+use App\Services\Baton\BatonScenarioService;
 
 class IndexController extends Controller
 {
     private $scenarioService;
 
-    public function __construct(OfferScenarioService $scenarioService)
+    public function __construct(BatonScenarioService $scenarioService)
     {
         $this->scenarioService = $scenarioService;
     }
 
     public function getList()
     {
-        return view('offer.index', [
-            'offerList' => $this->scenarioService->getOfferList()
+        return view('baton.index', [
+            'batonDetails' => $this->scenarioService->getBatonList()
         ]);
     }
 }

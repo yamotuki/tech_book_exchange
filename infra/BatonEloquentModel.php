@@ -7,7 +7,7 @@
  */
 namespace Infra;
 
-class OfferEloquentModel extends \Illuminate\Database\Eloquent\Model
+class BatonEloquentModel extends \Illuminate\Database\Eloquent\Model
 {
-    protected $table = 'offers';
+    protected $table = 'batons';
 }
